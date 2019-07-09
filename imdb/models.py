@@ -12,4 +12,4 @@ class SentimentAnalysis(models.Model):
     result = models.CharField(choices=REVIEW_TYPE, max_length=32)
 
     def __str__(self):
-        return '{}, {}'.format(id, self.result)
+        return '{}'.format(self.result)

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    {%for review in reviews %}
+    <div class="col s12 m12">
+        <div class="card {% if review.result == 'Positive' %}
+                            green
+                         {%endif%}
+                         {% if review.result == 'Negative' %}
+                            red
+                         {%endif%}
+                         {% if review.result == 'Neutral' %}
+                            grey
+                         {%endif%}">
+            <div class="card-content white-text">
+                <p>{{review.review}}</p>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
